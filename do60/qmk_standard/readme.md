@@ -1,6 +1,6 @@
 #  **do60 split space by Twopidee**
-[Imgur](https://i.imgur.com/hToUP9v.jpg)
-[Imgur](https://i.imgur.com/LZVJofb.jpg)
+![Imgur](https://i.imgur.com/hToUP9v.jpg)
+![Imgur](https://i.imgur.com/LZVJofb.jpg)
 
 Layer 0 is a standard ANSI layout with Space Cadet Shifts. Navigations layer
 enabled by TT(1). Activating RGB options and media keys with TT(2). Note -
