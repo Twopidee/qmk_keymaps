@@ -46,7 +46,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     case M_CUNT:
       if (record->event.pressed) {
         // when keycode M_CUNT is pressed
-        SEND_STRING(SS_TAP(X_T))"What a cunt!"(SS_TAP(X_ENT)));
+        SEND_STRING(SS_TAP(X_T))"What a cunt!"(SS_TAP(X_ENT));
       } else {
         // when keycode M_CUNT is released
       }
