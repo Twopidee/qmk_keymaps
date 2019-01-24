@@ -30,12 +30,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_NO,  RGB_TOG, RGB_MOD, RGB_RMOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD, RGB_VAI, RGB_VAD, RGB_SPI, RGB_SPD,
       KC_NO,  KC_NO,   KC_NO,                      KC_NO,                              KC_NO,   KC_TRNS, KC_NO, KC_NO)
 
+
+// 2: Macro Layer
 	 [_L2] = LAYOUT_60_ansi(
 					TO(0),  M_CUNT, KC_NO,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-					KC_NO,  KC_NO, KC_NO,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+					KC_NO,  KC_NO, KC_NO,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS,
 					KC_NO,  KC_NO, KC_NO,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
 					KC_NO,  KC_NO, KC_NO,  KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-					KC_NO,  KC_NO, KC_NO,                      KC_NO,                              KC_NO, KC_NO, KC_NO, KC_NO)
+					KC_NO,  KC_NO, KC_NO,                      KC_NO,                              KC_NO, KC_TRNS, KC_NO, KC_NO)
 };
 
 // Custom Actions
@@ -46,7 +48,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     case M_CUNT:
       if (record->event.pressed) {
         // when keycode M_CUNT is pressed
-        SEND_STRING(SS_TAP(X_T))"What a cunt!"(SS_TAP(X_ENT));
+        SEND_STRING(SS_TAP(X_T));
+        _delay_ms(250);
+        SEND_STRING("What a cunt!");
+        _delay_ms(250);
+        SS_TAP(X_ENTER);
       } else {
         // when keycode M_CUNT is released
       }
