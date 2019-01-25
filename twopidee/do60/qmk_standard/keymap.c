@@ -7,6 +7,7 @@
 #define _L0 0
 #define _L1 1
 #define _L2 2
+#define _ML 3
 
 //Macros
 enum custom_keycodes {
@@ -39,6 +40,27 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_LSFT, KC_NO,   KC_TRNS, KC_APP,  KC_TRNS,  KC_TRNS,   KC_TRNS,  KC_TRNS,  KC_TRNS, KC_TRNS,   KC_TRNS,   KC_RSFT,  KC_NO  , KC_VOLU,  KC_NO,    \
       RGB_RMOD,KC_LGUI, RGB_MOD,                    KC_BSPC,KC_TRNS,KC_DEL,                            KC_TRNS,   KC_TRNS,  KC_MPRV, KC_VOLD,  KC_MNXT),
 
+#if defined(MIDI_ENABLE) && defined(MIDI_ADVANCED)
+
+  // _ML: Midi Layer
+  [_ML] = LAYOUT_all(
+      TG(_ML), MI_VEL_1, MI_VEL_2, MI_VEL_3, MI_VEL_4, MI_VEL_5, MI_VEL_6, MI_VEL_7, MI_VEL_8, MI_VEL_9, MI_VEL_10, KC_NO,      KC_NO, KC_NO, KC_NO,   \
+      MI_CHU,  KC_NO,    MI_Cs,    MI_Ds,    KC_NO,    MI_Fs,    MI_Gs,    MI_As,    KC_NO,    MI_Cs_1,  MI_Ds_1,   KC_NO,      KC_NO,        KC_NO,   \
+      MI_MOD,  MI_C,     MI_D,     MI_E,     MI_F,     MI_G,     MI_A,     MI_B,     MI_C_1,   MI_D_1,   MI_E_1,    MI_F_1,     KC_NO,        KC_NO,    \
+      MI_SUS,  KC_NO,    MI_OCTD,  MI_OCTU,  MI_MODSD, MI_MODSU, KC_NO,    KC_NO,    KC_NO,    MI_TRNSD, MI_TRNSU,  MI_TRANS_0, KC_NO, KC_NO, KC_NO,    \
+      KC_LCTL, KC_LGUI,  KC_LALT,                   MI_ALLOFF, KC_NO,  MI_ALLOFF,                  KC_RGUI, TT(1),    KC_LEFT, KC_DOWN,  KC_RIGHT),
+
+#elif defined(MIDI_ENABLE) && defined(MIDI_BASIC)
+
+// _ML: Midi Layer
+  [_ML] = LAYOUT_all(
+     TG(_ML), KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,  KC_NO,   \
+     KC_NO,   KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,         KC_NO,   \
+     KC_NO,   KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,         KC_NO,    \
+     KC_NO,   KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, MI_ON,  KC_NO,    \
+     KC_NO,   KC_NO, KC_NO,                   KC_NO, TO(0),  KC_NO,          KC_NO, KC_NO, KC_NO, MI_OFF, KC_NO),
+
+   #endif
 };
 
 // Custom Actions
