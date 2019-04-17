@@ -1,4 +1,4 @@
-! [Imgur](https://i.imgur.com/bzDbFmV.jpg)
+! [Imgur] (https://i.imgur.com/bzDbFmV.jpg)
 
 # **Twopidee BDN9 LAYOUT**
 
